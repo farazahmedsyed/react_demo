@@ -17,18 +17,21 @@ class Signup extends Component{
      
 
         return <div className='Signup'>
+        <form className='' onSubmit={e => this.signup(e,onSubmit)}>
+        <div className='form-group'>
         <h1>Signup</h1>
-        <form onSubmit={e => this.signup(e,onSubmit)}>
-            <input type="text" name="username" placeholder="username" />
+            <input className='form-control' type="text" name="username" placeholder="username" />
             <br/>
-            <input type="password" name="password" placeholder='password' />
+            <input className='form-control'  type="password" name="password" placeholder='password' />
             <br/>
-            <input type="password" name="re-password" placeholder='re-password' />
+            <input className='form-control'  type="password" name="re-password" placeholder='re-password' />
             <br/>
             <label>{message}</label>
             <br/>
-            <input type='submit' name='signup_button' value='Signup' />
-        </form>
+            <input className='form-control btn-primary'  type='submit' name='signup_button' value='Signup' />
+            </div>
+             </form>
+        
         </div>;
     }
 }

@@ -8,16 +8,16 @@ class Base extends Component{
        
        
         return (
-            <div >
-                <ul id = 'menu'>
-                <li><NavLink to="/home"> Home </NavLink></li>
-                <li><NavLink to="/tag">Tag </NavLink></li>
-                <li><NavLink to="/data"> Data </NavLink></li>
-                <li><NavLink to="/logout"> Logout </NavLink></li>
+            <nav className="navbar navbar-expand-sm bg-light">
+             <div className="container-fluid">
+                <ul className="navbar-nav" id = 'menu'>
+                <li className="nav-item"><button className='btn btn-default'><NavLink to="/home"> Home </NavLink></button></li>
+                <li className="nav-item"><button className='btn btn-default'><NavLink to="/tag">Tag </NavLink></button></li>
+                <li className="nav-item"><button className='btn btn-default'><NavLink to="/data"> Data </NavLink></button></li>
+                <li className="nav-item"><button className='btn btn-default'><NavLink to="/logout"> Logout </NavLink></button></li>
             </ul>
-            <br/>
-            <br/>
             </div>
+            </nav>
             
         )
     }

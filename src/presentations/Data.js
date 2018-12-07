@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Redirect} from 'react-router-dom';
 
 class Data extends Component{
 
@@ -19,26 +20,38 @@ class Data extends Component{
       onSubmit(this.state);
     }
 
+    verfifyTags = () =>{
+        if(this.state.tag === undefined){
+            return <Redirect to='/tag'></Redirect>
+        }
+    }
+
     render(){
         const onSubmit = this.props.onSubmit;
         const onDelete = this.props.onDelete;
         
 
         return <div className='Data'>
+        {this.verfifyTags()}
         <h5>Data</h5>
-        <form onSubmit={e => this.submit(e,onSubmit)}>
-            <input type="text" name="name" placeholder="Name" defaultValue={this.state.identifier} onChange={v => this.setState({'identifier':v.target.value})} />
+        <form className='form-control ' onSubmit={e => this.submit(e,onSubmit)}>
+        <div className='form-group '>
+            <input className='form-control' type="text" name="name" placeholder="Name" defaultValue={this.state.identifier} onChange={v => this.setState({'identifier':v.target.value})} />
             <br/>
-            <input type="text" name="value" placeholder="Value" defaultValue={this.state.value} onChange={v => this.setState({'value':v.target.value})}/>
+            <input className='form-control'  type="text" name="value" placeholder="Value" defaultValue={this.state.value} onChange={v => this.setState({'value':v.target.value})}/>
             <br/>
-            <select value={this.state.tag.id} onChange={v => this.setState({"tag": {id:v.currentTarget.value}})}>
+            <select  className='form-control'  value={this.state.tag.id} onChange={v => this.setState({"tag": {id:v.currentTarget.value}})}>
                 {
                     this.state.tags.map(tag => {
                         return <option key = {tag.id} value={tag.id}>{tag.identifier}</option>
                     })
                 }
             </select>
-            <input type='submit' value= {this.state.submitText}/>
+           
+            <input  className='form-control btn btn-primary'  type='submit' value= {this.state.submitText}/>
+
+            </div>
+
         </form>
         {this.delete(onDelete)}
         </div>;

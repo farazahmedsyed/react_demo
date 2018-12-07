@@ -24,11 +24,14 @@ class Tag extends Component{
             name = '';
         }
         return <div className='Tag'>
+        <form className='form-inline' onSubmit={e=> this.submit(e,key,onSubmit)}>
+        <div className='form-group'>
         <h5>Tag</h5>
-        <form onSubmit={e=> this.submit(e,key,onSubmit)}>
-            <input type="text" name="name" placeholder="Tag Name" defaultValue={name}/>
-            <input type='submit' value = {submitText}/>
+            <input className='form-control' type="text" name="name" placeholder="Tag Name" defaultValue={name}/>
+            <input className='form-control btn btn-primary' type='submit' value = {submitText}/>
+            </div>
         </form>
+        <br/>
         {this.delete(onDelete, key)}
         </div>;
     }

@@ -20,15 +20,18 @@ class Login extends Component{
         return <Redirect to="/home"></Redirect>;
         }
         return <div className='Login'>
-        <h1>Login</h1>
-        <form onSubmit={e => this.login(e,onSubmit)} >
-            <input type="text" name="email" placeholder="Email" />
+        <form className="form-inline" onSubmit={e => this.login(e,onSubmit)} >
+        <div className='form-group'>
+        <h1>Login: </h1>
+            <input type="text" className='form-control' name="email" placeholder="Email" />
             <br/>
-            <input type="password" name="password" placeholder='password' />
+            <input className='form-control' type="password" name="password" placeholder='password' />
             <br/>
             <label>{message}</label><br/>
-            <input type='submit' name='login_button' value='Login' />
+            <input className='form-control btn-primary' type='submit' name='login_button' value='Login' />
+        </div>
         </form>
+        
         </div>;
     }
 }

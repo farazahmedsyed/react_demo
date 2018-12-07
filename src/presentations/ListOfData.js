@@ -32,9 +32,9 @@ class ListOfData extends Component{
     generic=(onSearch,onSubmit,tags)=>{
         return (<div className='ListOfData'>
          <Base/>
-            <form onSubmit = {e => {e.preventDefault(); onSearch(e.target.elements[0].value)}}>
-                <input type='search' placeholder='Search by Tag'/>
-                <input type='submit' />
+            <form className='form-inline' onSubmit = {e => {e.preventDefault(); onSearch(e.target.elements[0].value)}}>
+                <input className='form-control' type='search' placeholder='Search by Tag'/>
+                <input className='form-control btn btn-primary' type='submit' />
             </form>
             
         </div>);
