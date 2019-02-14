@@ -28,7 +28,7 @@ class Tag extends Component{
         <div className='form-group'>
         <h5>Tag</h5>
             <input className='form-control' type="text" name="name" placeholder="Tag Name" defaultValue={name}/>
-            <input className='form-control btn btn-primary' type='submit' value = {submitText}/>
+            <input className='btn btn-primary' type='submit' value = {submitText}/>
             </div>
         </form>
         <br/>

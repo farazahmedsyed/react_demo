@@ -20,20 +20,12 @@ class Data extends Component{
       onSubmit(this.state);
     }
 
-    verfifyTags = () =>{
-        if(this.state.tag === undefined){
-            return <Redirect to='/tag'></Redirect>
+    verfifyTags = (onSubmit, onDelete) =>{
+        if(this.state.tag === undefined || this.state.tag === null){
+            return <Redirect to='/tag'></Redirect>;
         }
-    }
-
-    render(){
-        const onSubmit = this.props.onSubmit;
-        const onDelete = this.props.onDelete;
-        
-
-        return <div className='Data'>
-        {this.verfifyTags()}
-        <h5>Data</h5>
+        return <div>
+             <h5>Data</h5>
         <form className='form-control ' onSubmit={e => this.submit(e,onSubmit)}>
         <div className='form-group '>
             <input className='form-control' type="text" name="name" placeholder="Name" defaultValue={this.state.identifier} onChange={v => this.setState({'identifier':v.target.value})} />
@@ -48,19 +40,29 @@ class Data extends Component{
                 }
             </select>
            
-            <input  className='form-control btn btn-primary'  type='submit' value= {this.state.submitText}/>
+            <input  className=' btn btn-primary'  type='submit' value= {this.state.submitText}/>
 
             </div>
 
         </form>
         {this.delete(onDelete)}
+        </div>
+    }
+
+    render(){
+        const onSubmit = this.props.onSubmit;
+        const onDelete = this.props.onDelete;
+        
+
+        return <div className='Data'>
+        {  this.verfifyTags(onSubmit, onDelete)}
         </div>;
     }
 
 
     delete=(onDelete)=>{
         if(this.state.id !== null){
-            return ( <button onClick={e => onDelete(this.state.id)}>Delete</button>
+            return ( <button className=' btn btn-danger' onClick={e => onDelete(this.state.id)}>Delete</button>
             );
         }
     }

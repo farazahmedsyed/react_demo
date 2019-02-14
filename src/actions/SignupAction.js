@@ -35,7 +35,7 @@ export function signup(email,pwd,rePwd){
     });
     return Axios.post(Constants.BASE_URL + "register",data,{headers : Constants.REQUEST_HEADER_JSON})
     .then(response => {dispatch(progressDone()); dispatch(signupSuccessful())})
-    .catch(error => {dispatch(progressDone()); dispatch(signupFailed(error.message))});
+    .catch(error => {dispatch(progressDone()); dispatch(signupFailed(error.response.data.message))});
 }    
         
 

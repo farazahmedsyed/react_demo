@@ -28,7 +28,7 @@ class Signup extends Component{
             <br/>
             <label>{message}</label>
             <br/>
-            <input className='form-control btn-primary'  type='submit' name='signup_button' value='Signup' />
+            <input className='btn btn-primary'  type='submit' name='signup_button' value='Signup' />
             </div>
              </form>
         

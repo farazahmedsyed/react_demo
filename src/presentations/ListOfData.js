@@ -8,7 +8,7 @@ class ListOfData extends Component{
         const datas = this.props.data;
         const isDone = this.props.isDone;
         const onSubmit = this.props.onSubmit;
-        const tags = this.props.tags;
+        const tags  = this.props.tags;
         const onSearch = this.props.onSearch;
         const message = this.props.message;
         const onDelete = this.props.onDelete;
