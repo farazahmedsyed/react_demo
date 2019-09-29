@@ -3,10 +3,10 @@
 #Prerequisite
 Backend Repository: https://github.com/farazahmedsyed/spring_boot_react_demo_app_api 
 
-#Build
+# Build
 
 ```npm install```
 
-#Run
+# Run
 
 ```npm start```
